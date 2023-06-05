@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#" class="text-light">Flipkart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-light" style="cursor: pointer;">About</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/invoice">My Orders</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-warning my-1 my-sm-0  mr-1" type="submit">  <i class="fas fa-search"></i></button>
+        <button class="btn btn-success mr-1 " routerLink="/cart"><span>Cart {{ getCartItemCount() }}</span>
+        </button>
+        <button *ngIf="isloggedOut ==false" class="btn btn-outline-warning" routerLink="/login">Login</button>
+        <button *ngIf="isloggedOut==true" class="btn btn-outline-warning" (click)="logout()">Logout</button>
+        
+      </form>
+    </div>
+  </nav>

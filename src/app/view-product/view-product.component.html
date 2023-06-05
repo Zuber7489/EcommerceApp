@@ -1,0 +1,22 @@
+<app-navbar></app-navbar><br>
+<h1 class="text-primary text-center">View Product</h1>
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <img class="card-img-top" [src]="data.image"  alt="Card image cap" height="290px">
+            <h4 class="text-white">Product Name: <span class="text-warning">{{data.title}}</span></h4>
+            <h4 class="text-white">Category: <span class="text-warning">{{data.category |uppercase}}</span></h4>
+            <p class="lead text-white">Price: <span class="text-warning">{{data.price}}</span></p>
+            <p class="lead text-white">Rating: <span class="text-warning">{{data.rating.rate}}/5</span></p>
+            <hr class="my-4">
+            <p class="text-left "><span class="text-white">Description:</span> {{data.description}}</p>
+            <p class="lead">
+              <a class="btn btn-warning mr-3 btn-lg" routerLink="/cart" href="#" role="button">View Cart</a>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Add to ♡</a>
+            </p>
+          </div>
+    </div>
+</div>
+
+
