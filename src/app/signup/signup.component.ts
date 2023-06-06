@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   submitForm(){
    console.log(this.signupForm.value)
    this.auth.postFormData(this.signupForm.value).subscribe(res=>{
-alert('Signup Successful')
+alert('Signup Successfull')
 this.route.navigate(['/login'])   
    })
   }

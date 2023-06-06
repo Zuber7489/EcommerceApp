@@ -12,8 +12,11 @@ import { TotalPriceService } from '../total-price.service';
 })
 export class CartComponent implements OnInit {
   totalprice:any;
+  hide:boolean=false;
   appliedcouponprice:any;
   appliedfinalcouponprice:any;
+  incrementprice:any;
+  decrementprice:any;
   cartItems: any[] = [];
 
   couponForm=new FormGroup({
@@ -49,6 +52,7 @@ export class CartComponent implements OnInit {
       this.appliedcouponprice = this.calculateTotalPrice() - discount;
       this.appliedfinalcouponprice =Number(this.appliedcouponprice.toFixed(2));
       console.log(this.couponForm.value.coupon)
+      this.hide=true
        // Update total price in the service
     }else{
       this.appliedcouponprice=this.totalprice
@@ -78,4 +82,22 @@ export class CartComponent implements OnInit {
   private updateLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
+
+
+  counter: number = 1;
+
+  increment(item:any) {
+    this.counter++;
+    item.price=item.price+item.price;
+  this.incrementprice = item.price;
+  }
+
+  decrement(item: any) {
+    if (item.price > 1) 
+    {
+      this.counter--;
+      item.price -= 1;
+    }
+  }
+   
 }
