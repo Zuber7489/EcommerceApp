@@ -1,4 +1,5 @@
 // cart.service.ts
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class CartService {
   private cartItemsKey = 'cartItems';
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
 
   addToCart(item: any) {
     const cartItems = this.getCartItems();
@@ -27,4 +28,9 @@ export class CartService {
   private saveCartItems(cartItems: any[]) {
     localStorage.setItem(this.cartItemsKey, JSON.stringify(cartItems));
   }
+
+searchCategory(id:any){
+  return this.http.get('https://fakestoreapi.com/products/category/'+id)
+}
+
 }

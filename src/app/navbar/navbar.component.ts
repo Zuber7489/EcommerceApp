@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { CartService } from '../cart.service';
+import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +12,11 @@ import { CartService } from '../cart.service';
 })
 export class NavbarComponent implements OnInit {
   isloggedOut: boolean = false;
+  searchForm=new FormGroup({
+    searchValue:new FormControl('')
+  })
 
-  constructor(public auth: AuthService, public router:Router,public cartService:CartService) { }
+  constructor(public auth: AuthService, public router:Router,public cartService:CartService,public http:HttpClient) { }
   data: any;
   ngOnInit(): void {
     const userData = localStorage.getItem('user');
@@ -31,5 +36,10 @@ export class NavbarComponent implements OnInit {
     return this.cartService.getCartItems().length;
   }
   
+searchData(){
+  this.cartService.searchCategory(this.searchForm.value.searchValue).subscribe(res=>{
+    console.log(res)
+  })
+}
 
 }

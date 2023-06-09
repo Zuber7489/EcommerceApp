@@ -10,11 +10,11 @@
           <a class="nav-link text-light" style="cursor: pointer;">About</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/invoice">My Orders</a>
+          <a class="nav-link text-light" routerLink="/cart">My Orders</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="searchData()">
+        <input class="form-control mr-sm-0" type="search" placeholder="Search" formControlName="searchValue" aria-label="Search">
         <button class="btn btn-outline-warning my-1 my-sm-0  mr-1" type="submit">  <i class="fas fa-search"></i></button>
         <button class="btn btn-success mr-1 " routerLink="/cart"><span>Cart {{ getCartItemCount() }}</span>
         </button>
