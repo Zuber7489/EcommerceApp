@@ -5,8 +5,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { CartComponent } from './cart/cart.component';
-import { PaymentComponent } from './payment/payment.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AddressComponent } from './address/address.component';
+import { AboutComponent } from './about/about.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -15,8 +17,10 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'view-product/:id',component:ViewProductComponent}, 
   {path:'cart',component:CartComponent}, 
-  {path:'payment',component:PaymentComponent}, 
   {path:'invoice',component:InvoiceComponent}, 
+  {path:'address',component:AddressComponent},
+  {path:'about',component:AboutComponent},
+  
 ];
 
 @NgModule({

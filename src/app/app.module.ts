@@ -15,8 +15,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { WordLimitPipe } from './word-limit.pipe';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { CartComponent } from './cart/cart.component';
-import { PaymentComponent } from './payment/payment.component';
+
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AddressComponent } from './address/address.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -28,8 +32,12 @@ import { InvoiceComponent } from './invoice/invoice.component';
     WordLimitPipe,
     ViewProductComponent,
     CartComponent,
-    PaymentComponent,
+    
     InvoiceComponent,
+    AddressComponent,
+    AboutComponent,
+    FooterComponent,
+    
 
   ],
   imports: [

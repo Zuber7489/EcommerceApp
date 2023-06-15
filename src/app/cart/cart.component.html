@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
 
 
-<div class="card mt-3 ">
+<div class="card" style="margin-top:5% ;">
     <div class="row">
         <div class="col-md-8 cart bg-primary text-white">
             <div class="title">
                 <div class="row">
-                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                    <div class="col align-self-center text-right ">3 items</div>
+                    <div class="col"><h4><b>My Cart</b></h4></div>
+                    
                 </div>
             </div>    
             <div class="row border-top border-bottom">
@@ -57,8 +57,9 @@
             <div class="row">
             <div class="col">Final Price</div>
             <div class="col text-right" >$ {{appliedfinalcouponprice ? appliedfinalcouponprice : calculateTotalPrice()}}</div></div>
-            <button class="btn" routerLink="/payment">CHECKOUT</button>
+            <button class="btn"(click)="makePayment(appliedfinalcouponprice ? appliedfinalcouponprice : calculateTotalPrice())">CHECKOUT</button>
         </div>
     </div>
     
 </div>
+

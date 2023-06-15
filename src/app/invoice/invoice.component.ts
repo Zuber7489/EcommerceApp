@@ -14,11 +14,19 @@ export class InvoiceComponent implements OnInit {
   price:any;
   signinDetails:any;
   date=new Date()
+  addressData: any;
   constructor(public cartService:CartService, private totalPriceService: TotalPriceService) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
-this.gettotalprice()    
+this.gettotalprice()
+const storedAddressData = localStorage.getItem('addressData');
+if (storedAddressData) {
+  const parsedAddressData = JSON.parse(storedAddressData);
+  // Use the parsedAddressData as needed
+  console.log(parsedAddressData);
+  this.addressData = parsedAddressData;
+}    
 
   }
   

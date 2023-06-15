@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div style="margin-top: 90px;">
+    <form [formGroup]="addAddressForm">
+        <h4 class="text-center text-warning">Fill Address</h4>
+        <div class="form-group" >
+          <label for="exampleFormControlInput1">Name</label>
+          <input type="text" class="form-control" formControlName="name"  placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" formControlName="email"  placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">City</label>
+          <input type="text" class="form-control" formControlName="city"  placeholder="Enter Your City">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Street Address</label>
+          <input type="address" class="form-control" formControlName="address"  placeholder="Enter Your Address">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Zipcode</label>
+          <input type="number" class="form-control" formControlName="zipcode"  placeholder="Enter Your Zipcode">
+        </div>
+
+        <button class="btn btn-success ml-2" (click)="addAddress()">Save</button>
+      </form>
+</div>
